@@ -42,7 +42,7 @@ margin-bottom : 1vh;
 .caImg{
     margin-right : 3vw;
 }
-.cabutton{
+.cab{
     justify-content : center;
     align-items : center;
     display : flex;
