@@ -14,7 +14,6 @@ function Detail1() {
   const { id } = location.state || {};
   const navigate = useNavigate();
   const [facilityData, setFacilityData] = useState(null);
-  const [reservationStatus] = useState(false);
 
   const settings1 = {
     infinite: true,
@@ -73,17 +72,10 @@ function Detail1() {
       };
     }, []);
     const onClickButton1 = () => {
-      if (reservationStatus) {
-        console.log('예약 반납 중');
-      } else {
         navigate(`/status`);
-      }
     };
 
     const onClickButton2 = () => {
-      if (reservationStatus) {
-        console.log('예약 연장 중');
-      } else {
         navigate(`/facility/${id}/reserve1`, {
           state: {
             buildingName: facilityData.buildingName,
@@ -92,7 +84,6 @@ function Detail1() {
             id: id,
           },
         });
-      }
     };
     const onClickReviewButton = () => {
       navigate(`/review`);
@@ -122,6 +113,8 @@ function Detail1() {
   
       fetchData();
     }, [id]);
+    useEffect(() => {
+    }, [facilityData]);
   return (
     <B.Body>
       <B.ImageSlider>
