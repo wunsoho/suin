@@ -14,6 +14,11 @@ export const Back = styled.div`
         font-weight : bold;
     }
 `
+export const SlideContainer = styled.div`
+.capture{
+    margin-right : 3vw;
+}
+`
 export const ReturnContainer = styled.div`
 background-color : #FFFFFF;
 border-radius : 5vw;

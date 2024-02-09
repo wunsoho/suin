@@ -33,7 +33,7 @@ const Return = () => {
     const selectedFiles = e.target.files;
 
     if (selectedFiles.length > 0) {
-      const newPhotos = Array.from(selectedFiles).slice(0, 5).map((file) => {
+      const newPhotos = Array.from(selectedFiles).slice(0, 4).map((file) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         return new Promise((resolve) => {
@@ -66,48 +66,45 @@ const Return = () => {
         </button>
         <div className="title">반납하기</div>
       </B.Back>
-      <B.container1>
-          <B.imageContainer>
-            <img src={Img1} alt="반납 대표 사진" />
-            <div className="Imgtitle">반납 사진 등록하기</div>
-          </B.imageContainer>
-          <div className="Info">
-            <div className="InfoTitle">열린 열람실</div>
-            <div>이용일 2023-12-24<br />이용시간 9:00~13:00</div>
-          </div>
-        </B.container1>
-      <B.container2>
-        <Slider {...sliderSettings}>
-          {photos.map((photo, index) => (
-            <div key={index}>
-              <img
-                src={photo}
-                alt={`Selected ${index}`}
-                style={{
-                  width: '20vw',
-                  height: '15vh',
-                  border: '0.2vw solid #ccc',
-                  marginBottom: '0.5vh',
-                }}
-              />
+      <B.ReturnContainer>
+        <B.container1>
+            <B.imageContainer>
+              <img src={Img1} alt="반납 대표 사진" />
+              <div className="Imgtitle">반납 사진 등록하기</div>
+            </B.imageContainer>
+            <div className="Info">
+              <div className="InfoTitle">열린 열람실</div>
+              <div>이용일 2023-12-24<br />이용시간 9:00~13:00</div>
             </div>
-          ))}
-        </Slider>
-        <input
-          type="file"
-          name="photoFile"
-          id="photoFile"
-          accept="image/*"
-          capture="camera"
-          onChange={handleFileChange}
-          style={{ display: 'none' }}
-          multiple
-        />
+          </B.container1>
+        <B.container2>
+          <Slider {...sliderSettings}>
+            {photos.map((photo, index) => (
+              <B.SlideContainer>
+                <div key={index}>
+                  <img className = "capture" src={photo} alt={`Selected ${index}`}/>
+                </div>
+              </B.SlideContainer>
+            ))}
+          </Slider>
+          <input
+            type="file"
+            name="photoFile"
+            id="photoFile"
+            accept="image/*"
+            capture="camera"
+            onChange={handleFileChange}
+            style={{ display: 'none' }}
+            multiple
+          />
+          <br />
+          <button className="cab" onClick={openCamera}>
+            반납 사진 촬영
+            </button>
+        </B.container2>
         <br />
-        <button className="cab" value="반납 사진 촬영" onClick={openCamera} />
-      </B.container2>
-      <br />
-      <div id="result"></div>
+        <div id="result"></div>
+      </B.ReturnContainer>
       <B.CheckContainer>
         <div className="title">
           <div className="Info1">잠깐, 반납하기 전 확인하셨나요?</div>
