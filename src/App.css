@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  background-color: black;
+}
+
+.body{
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+:root{
+  --vh:100%;
+}
+.MainBody,
+.Detail1Body,
+.ReserveBody,
+.StatusBody,
+.ReturnBody,
+.ReviewBody {
+  max-width: 100%; 
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}

@@ -1,0 +1,14 @@
+.camera-modal-container {
+    position: relative;
+  }
+  
+  .camera-modal-content {
+    position: relative;
+    max-width: 960px;
+    width : 100%;
+  }
+  
+  .camera-video {
+    width: 100%;
+    height: auto;
+  }
