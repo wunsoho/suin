@@ -63,6 +63,7 @@ const Return = () => {
                 </button>
                 <div className="title">반납하기</div>
             </B.Back>
+            <B.container2>
             <Slider {...sliderSettings}>
             {photos.map((photo, index) => (
                 <div key={index}>
@@ -70,10 +71,10 @@ const Return = () => {
                   src={photo}
                   alt={`Selected ${index}`}
                   style={{
-                    width: '100%',
-                    height: 'auto',
-                    border: '1px solid #ccc',
-                    marginBottom: '10px',
+                    width: '30vw',
+                    height: '5vh',
+                    border: '0.2vw solid #ccc',
+                    marginBottom: '1vh',
                   }}
                 />
                 </div>
@@ -90,7 +91,8 @@ const Return = () => {
                 multiple
             />
             <br />
-            <input type="button" value="카메라" onClick={openCamera} />
+            <input classname = "cabutton" type="button" value="반납 사진 촬영" onClick={openCamera} />
+            </B.container2>
             <br />
             <div id="result"></div>
             <B.CheckContainer>
