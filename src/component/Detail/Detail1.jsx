@@ -220,10 +220,10 @@ function Detail1() {
       </B.LocationData>
       <B.ButtonContainer>
       <B.Button1 key={1} onClick={() => onClickButton1()}>
-          {reservationStatus ? '반납하기' : '예약현황'}
+          예약현황
         </B.Button1>
         <B.Button2 key={2} onClick={() => onClickButton2()}>
-          {reservationStatus ? '연장하기' : '예약하기'}
+          반납하기
         </B.Button2>
       </B.ButtonContainer>
     </B.Body>
