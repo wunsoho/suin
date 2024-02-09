@@ -15,7 +15,6 @@ function Detail1() {
   const navigate = useNavigate();
   const [facilityData, setFacilityData] = useState(null);
   const [reservationStatus] = useState(false);
-  const [setFilteredItems] = useState([]);
 
   const settings1 = {
     infinite: true,
@@ -123,9 +122,6 @@ function Detail1() {
   
       fetchData();
     }, [id]);
-    useEffect(() => {
-      setFilteredItems();
-    }, [facilityData]);
   return (
     <B.Body>
       <B.ImageSlider>
