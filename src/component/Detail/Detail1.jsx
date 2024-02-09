@@ -14,8 +14,8 @@ function Detail1() {
   const { id } = location.state || {};
   const navigate = useNavigate();
   const [facilityData, setFacilityData] = useState(null);
-  const [reservationStatus, setReservationStatus] = useState(false);
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [reservationStatus] = useState(false);
+  const [setFilteredItems] = useState([]);
 
   const settings1 = {
     infinite: true,

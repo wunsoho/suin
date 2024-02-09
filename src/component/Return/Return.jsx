@@ -52,34 +52,6 @@ function Return() {
     margin: 20, // 간격 조절
   };
 
-  const handleCompleteReturn = async () => {
-    const reservationId = 24;
-    const requestBody = {
-      reservationId,
-      photos: capturedPhotos,
-      ...checkList,
-    };
-
-    try {
-      const token = 'YOUR_ACCESS_TOKEN';
-      const response = await fetch('http://13.125.247.248:8080/api/v1/reservation/return', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify(requestBody),
-      });
-
-      if (response.ok) {
-        console.log('반납 정보 전송 성공!');
-      } else {
-        console.error('반납 정보 전송 실패!');
-      }
-    } catch (error) {
-      console.error('에러 발생:', error);
-    }
-  };
 
   useEffect(() => {
     console.log('Captured Photos:', capturedPhotos);
