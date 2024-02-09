@@ -16,6 +16,8 @@ export const Back = styled.div`
 `
 export const SlideContainer = styled.div`
 .capture{
+    width : 25vw;
+    height : 15vh;
     margin-right : 3vw;
 }
 `
